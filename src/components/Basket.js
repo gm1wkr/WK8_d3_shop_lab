@@ -4,12 +4,14 @@ import BasketTotal from './BasketTotal';
 import styled from 'styled-components';
 
 const BasketWrap = styled.div`
-  background-color: #00ffcc;
   min-width: 20vw;
+  margin-top: 1.6rem;
+  margin-right: 1rem;;
+  text-align: right;
 `
 
 
-const Basket = ( {basket, basketTotal} ) => {
+const Basket = ( {basket, basketTotal, removeFromBasket} ) => {
 
     if(basket.length === 0) {
 
@@ -25,7 +27,7 @@ const Basket = ( {basket, basketTotal} ) => {
       <BasketWrap>
         
         <BasketTotal basket={basket} basketTotal={basketTotal} />
-        <BasketList basket={basket} />
+        <BasketList basket={basket} removeFromBasket={removeFromBasket} />
       </BasketWrap>
     )
 }
