@@ -7,16 +7,21 @@ import styled from 'styled-components';
 
 const MainArea = styled.main`
   display: flex;
+  margin-bottom: 2rem;;
   
 `
 
 const ShopContainer = () => {
 
   const [productList, setProductList] = useState([
-    {id: 1, name: "Snapping Purple Daisy", price: 10.00, description: "A snapping purple daisy with added bit", image: "http://BLAH BLAH"},
-    {id: 2, name: "Carniverous Ivy", price: 16.00, description: "This Ivy will eat your granny", image: "http://BLAH BLAH"},
-    {id: 3, name: "Rampant Rubekia", price: 12.00, description: "Might eat the kids if over watered", image: "http://BLAH BLAH"},
-    {id: 4, name: "Cyanus Arvenis", price: 160.00, description: "A nice bluish flowery thing that grows on a stalk", image: "http://BLAH BLAH"},
+    {id: 1, name: "Snapping Purple Daisy", price: 10.00, description: "A snapping purple daisy with added bit", image: "./images/flower1.jpeg"},
+    {id: 2, name: "Carniverous Ivy", price: 16.00, description: "This Ivy will eat your granny", image: "./images/flower1.jpeg"},
+    {id: 3, name: "Rampant Rubekia", price: 12.00, description: "Might eat the kids if over watered", image: "./images/flower1.jpeg"},
+    {id: 4, name: "Cyanus Arvenis", price: 160.00, description: "A nice bluish flowery thing that grows on a stalk", image: "./images/flower1.jpeg"},
+    {id: 5, name: "Lobelia", price: 10.00, description: "A small delicate creeping plant with blue and purple flowers.", image: "./images/flower1.jpeg"},
+    {id: 6, name: "Trifolium Purpurae", price: 16.00, description: "A pruple variet of creeping trifolium", image: "./images/flower1.jpeg"},
+    {id: 7, name: "Rubekia", price: 12.00, description: "With its big yellow flowers this is a summer favourite.", image: "./images/flower1.jpeg"},
+    {id: 8, name: "Cyanus Arvenis", price: 160.00, description: "A nice bluish flowery thing that grows on a stalk", image: "./images/flower1.jpeg"}
   ]);  
 
   const [basket, setBasket] = useState([]); 
@@ -36,7 +41,6 @@ const ShopContainer = () => {
       return total + item.price
     }, 0);
     setBasketTotal(total);
-    console.log(total);
   }
 
 
@@ -46,7 +50,7 @@ const ShopContainer = () => {
 
 
   const [user, setUser] = useState({
-    name: "Boris Johnstoned"
+    name: "Sandra Wan"
   })
    
   return (

@@ -1,32 +1,26 @@
 import React from 'react';
 import styled from 'styled-components';
+import CardImage from './CardImage';
 
-const ListItemOuter = styled.li`
-  list-style: 0;
+const Card = styled.div`
+  margin: 2rem 1rem;
+  margin-bottom: 0;
+  background-color: #eee; 
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
 `
 
-const List = styled.ul`
-  list-style-type: none;
-  margin-bottom: 2rem;
-  `
-  
+const CardHeader = styled.h3``
 
-  const ListItemInner = styled.li`
-  color: #fff;
-  background-color: #10662a;
-  padding: 1rem;
-  margin-right: 2rem;
+const CardDescription = styled.p``
 
-`
+const CardPrice = styled.p``
 
-const ListInnerHead = styled(ListItemInner)`
-  font-weight:bold;
-  font-size: 1.5rem;
-`
-const ListPrice = styled(ListItemInner)`
-  font-weight:bold;
-  font-size: 2.4rem;
-`
+const CardButton = styled.button``
+
+
 
 
 const Product = ({ product, addToBasket }) => {
@@ -36,17 +30,13 @@ const Product = ({ product, addToBasket }) => {
   }
 
   return (
-    <>
-        <ListItemOuter>
-            <List>
-                <ListInnerHead >Name: {product.name}</ListInnerHead>
-                <ListPrice >Price: £{product.price}</ListPrice>
-                <ListItemInner >Desc: {product.description}</ListItemInner>
-                <ListItemInner><button onClick={handleAddToBasketClick}>Add to Basket</button></ListItemInner>
-            </List>
-        </ListItemOuter>
-    </>
-  
+            <Card>
+                <CardHeader >{product.name}</CardHeader>
+                <CardImage src={product.image} alt={product.name} />
+                <CardDescription >{product.description}</CardDescription>
+                <CardPrice >£{product.price}</CardPrice>
+                <CardButton onClick={handleAddToBasketClick}>Add to Basket</CardButton>
+            </Card>
     )
 }
 

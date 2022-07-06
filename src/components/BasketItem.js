@@ -1,13 +1,18 @@
-import { render } from '@testing-library/react';
 import React from 'react';
+import styled from 'styled-components';
+
+const ListItem = styled.li`
+
+`
+
 
 const BasketItem = ({ basketItem }) => {
     return(
-        <li>
+        <ListItem>
             <h3>{basketItem.name}</h3>
             <p>£{basketItem.price}</p>
             <button>Remove Item</button>
-        </li>
+        </ListItem>
     )
 }
 
